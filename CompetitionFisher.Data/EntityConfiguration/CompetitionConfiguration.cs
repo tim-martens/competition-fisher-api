@@ -1,6 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using CompetitionFisher.Data.Entities;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
-using CompetitionFisher.Data.Entities;
 
 namespace CompetitionFisher.Data.EntityConfiguration
 {
@@ -8,12 +8,19 @@ namespace CompetitionFisher.Data.EntityConfiguration
     {
         public CompetitionConfiguration()
         {
-            //CompetitionId
-            HasKey(el => el.CompetitionId);
-            Property(el => el.CompetitionId).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None); // Client must set the ID.
 
-            //CompetitionDate
-            Property(el => el.CompetitionDate).IsRequired();
+            //Id
+            HasKey(el => el.Id);
+            Property(el => el.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None); // Client must set the ID.
+
+            //Date
+            Property(el => el.Date)
+                .IsRequired()
+                .HasColumnType("datetime2")
+                .HasPrecision(0); ;
+
+            //ChampionshipId
+            //Championship
 
             //Fishermen
             HasMany(f => f.Fishermen)
@@ -25,7 +32,6 @@ namespace CompetitionFisher.Data.EntityConfiguration
                     fc.MapRightKey("FishermanId");
                 });
 
-            //Results
         }
     }
 }

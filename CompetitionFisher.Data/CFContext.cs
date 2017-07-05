@@ -1,7 +1,7 @@
-﻿using System.Data.Entity;
-using System.Data.Entity.ModelConfiguration.Conventions;
-using CompetitionFisher.Data.Entities;
+﻿using CompetitionFisher.Data.Entities;
 using CompetitionFisher.Data.EntityConfiguration;
+using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace CompetitionFisher.Data
 {
@@ -9,7 +9,6 @@ namespace CompetitionFisher.Data
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Competition> Competitions { get; set; }
-        public DbSet<Result> Results { get; set; }
         public DbSet<Fisherman> Fishermen { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -19,9 +18,9 @@ namespace CompetitionFisher.Data
             // Globally disable the convention for cascading deletes
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             
+            // entity configurations
             modelBuilder.Configurations.Add(new UserConfiguration());
             modelBuilder.Configurations.Add(new CompetitionConfiguration());
-            modelBuilder.Configurations.Add(new ResultConfiguration());
             modelBuilder.Configurations.Add(new FishermanConfiguration());
         }
 

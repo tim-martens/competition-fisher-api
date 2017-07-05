@@ -2,7 +2,7 @@
 using System.Data.Entity.Infrastructure.Annotations;
 using System.Data.Entity.ModelConfiguration.Configuration;
 
-namespace CompetitionFisher.Data.EntityConfiguration.Extensions
+namespace CompetitionFisher.Data.EntityConfiguration.Code.Extensions
 {
     public static class TypeConfigurationExtensions
     {

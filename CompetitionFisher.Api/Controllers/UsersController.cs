@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using CompetitionFisher.Data;
+using CompetitionFisher.Data.Entities;
+using System;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using CompetitionFisher.Data;
-using CompetitionFisher.Data.Entities;
 
 namespace CompetitionFisher.Api.Controllers
 {
@@ -24,9 +22,9 @@ namespace CompetitionFisher.Api.Controllers
 
         // GET: api/Users/5
         [ResponseType(typeof(User))]
-        public IHttpActionResult GetUser(Guid userId)
+        public IHttpActionResult GetUser(Guid id)
         {
-            User user = db.Users.Find(userId);
+            User user = db.Users.Find(id);
             if (user == null)
             {
                 return NotFound();
@@ -37,14 +35,14 @@ namespace CompetitionFisher.Api.Controllers
 
         // PUT: api/users/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutUser(Guid userId, User user)
+        public IHttpActionResult PutUser(Guid id, User user)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (userId != user.UserId)
+            if (id != user.Id)
             {
                 return BadRequest();
             }
@@ -57,7 +55,7 @@ namespace CompetitionFisher.Api.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!UserExists(userId))
+                if (!UserExists(id))
                 {
                     return NotFound();
                 }
@@ -87,7 +85,7 @@ namespace CompetitionFisher.Api.Controllers
             }
             catch (DbUpdateException)
             {
-                if (UserExists(user.UserId))
+                if (UserExists(user.Id))
                 {
                     return Conflict();
                 }
@@ -97,14 +95,14 @@ namespace CompetitionFisher.Api.Controllers
                 }
             }
 
-            return CreatedAtRoute("DefaultApi", new { id = user.UserId }, user);
+            return CreatedAtRoute("DefaultApi", new { id = user.Id }, user);
         }
 
         // DELETE: api/Users/5
         [ResponseType(typeof(User))]
-        public IHttpActionResult DeleteUser(Guid userId)
+        public IHttpActionResult DeleteUser(Guid id)
         {
-            User user = db.Users.Find(userId);
+            User user = db.Users.Find(id);
             if (user == null)
             {
                 return NotFound();
@@ -127,7 +125,7 @@ namespace CompetitionFisher.Api.Controllers
 
         private bool UserExists(Guid id)
         {
-            return db.Users.Count(e => e.UserId == id) > 0;
+            return db.Users.Count(e => e.Id == id) > 0;
         }
     }
 }
