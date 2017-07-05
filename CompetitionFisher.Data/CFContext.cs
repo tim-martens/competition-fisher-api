@@ -22,6 +22,7 @@ namespace CompetitionFisher.Data
             modelBuilder.Configurations.Add(new UserConfiguration());
             modelBuilder.Configurations.Add(new CompetitionConfiguration());
             modelBuilder.Configurations.Add(new FishermanConfiguration());
+            modelBuilder.Configurations.Add(new ChampionshipConfiguration());
         }
 
     }
