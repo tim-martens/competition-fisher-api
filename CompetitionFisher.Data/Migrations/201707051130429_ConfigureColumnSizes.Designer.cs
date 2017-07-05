@@ -7,13 +7,13 @@ namespace CompetitionFisher.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddIndexUser : IMigrationMetadata
+    public sealed partial class ConfigureColumnSizes : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddIndexUser));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ConfigureColumnSizes));
         
         string IMigrationMetadata.Id
         {
-            get { return "201707041522100_AddIndexUser"; }
+            get { return "201707051130429_ConfigureColumnSizes"; }
         }
         
         string IMigrationMetadata.Source

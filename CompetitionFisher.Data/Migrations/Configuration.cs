@@ -1,18 +1,15 @@
 namespace CompetitionFisher.Data.Migrations
 {
-    using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
-    public class Configuration : DbMigrationsConfiguration<CompetitionFisher.Data.CfContext>
+    public class Configuration : DbMigrationsConfiguration<CfContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(CompetitionFisher.Data.CfContext context)
+        protected override void Seed(CfContext context)
         {
             //  This method will be called after migrating to the latest version.
 

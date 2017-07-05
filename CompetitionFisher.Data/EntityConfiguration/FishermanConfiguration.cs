@@ -1,6 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using CompetitionFisher.Data.Entities;
+using CompetitionFisher.Data.EntityConfiguration.Code;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
-using CompetitionFisher.Data.Entities;
 
 namespace CompetitionFisher.Data.EntityConfiguration
 {
@@ -8,15 +9,16 @@ namespace CompetitionFisher.Data.EntityConfiguration
     {
         public FishermanConfiguration()
         {
-            //FishermanId
-            HasKey(el => el.FishermanId);
-            Property(el => el.FishermanId).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None); // Client must set the ID.
+
+            //Id
+            HasKey(el => el.Id);
+            Property(el => el.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None); // Client must set the ID.
 
             //FirstName
-            Property(el => el.FirstName).IsRequired().HasMaxLength(50);
+            Property(el => el.FirstName).IsRequired().HasMaxLength(EntityConfigurationConstants.DEFAULT_SIZE_STRING_COLUMN_MEDIUM);
 
             //LastName
-            Property(el => el.LastName).IsRequired().HasMaxLength(50);
+            Property(el => el.LastName).IsRequired().HasMaxLength(EntityConfigurationConstants.DEFAULT_SIZE_STRING_COLUMN_MEDIUM);
 
             //Competitions
         }
