@@ -8,7 +8,7 @@ namespace CompetitionFisher.Data.Entities
         public Guid Id { get; set; }
         public string Name { get; set; }
 
-        public virtual ICollection<User> Admins { get; set; }
+        public virtual ICollection<ApplicationUser> Admins { get; set; }
         public virtual ICollection<Competition> Competitions { get; set; }
     }
 }

@@ -11,10 +11,10 @@ namespace CompetitionFisher.Data.Entities
 
         public DateTime Date { get; set; }
 
-        public Guid? ChampionshipId { get; set; }
+        public Guid ChampionshipId { get; set; }
         public virtual Championship Championship { get; set; }
 
-        public virtual ICollection<Fisherman> Fishermen { get; set; }
+        public virtual ICollection<Competitor> Competitors { get; set; }
 
     }
 

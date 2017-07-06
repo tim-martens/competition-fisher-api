@@ -27,13 +27,13 @@ namespace CompetitionFisher.Data.EntityConfiguration
             //Championship
 
             //Fishermen
-            HasMany(f => f.Fishermen)
+            HasMany(f => f.Competitors)
                 .WithMany(c => c.Competitions)
                 .Map(fc =>
                 {
-                    fc.ToTable("FishermenCompetitions");
-                    fc.MapLeftKey("CompetitionId");
-                    fc.MapRightKey("FishermanId");
+                    fc.ToTable("CompetitionsPerCompetitor");
+                    fc.MapLeftKey("CompetitorId");
+                    fc.MapRightKey("CompetitionId");
                 });
 
         }

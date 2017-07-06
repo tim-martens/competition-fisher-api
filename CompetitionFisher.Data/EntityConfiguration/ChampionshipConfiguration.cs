@@ -22,9 +22,9 @@ namespace CompetitionFisher.Data.EntityConfiguration
                .WithMany(a => a.Championships)
                .Map(ca =>
                {
-                   ca.ToTable("ChampionshipsAdmins");
-                   ca.MapLeftKey("ChampionshipId");
-                   ca.MapRightKey("UserId");
+                   ca.ToTable("AdminsPerChampionship");
+                   ca.MapLeftKey("ApplicationUserId");
+                   ca.MapRightKey("ChampionshipId");
                });
 
             //Competitions

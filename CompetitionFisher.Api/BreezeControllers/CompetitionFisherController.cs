@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-using Breeze.ContextProvider;
+﻿using Breeze.ContextProvider;
 using Breeze.ContextProvider.EF6;
 using Breeze.WebApi2;
 using CompetitionFisher.Data;
 using CompetitionFisher.Data.Entities;
 using Newtonsoft.Json.Linq;
+using System.Linq;
+using System.Web.Http;
 
 namespace CompetitionFisher.Api.BreezeControllers
 {
@@ -25,9 +21,9 @@ namespace CompetitionFisher.Api.BreezeControllers
         }
         private bool beforeSaveEntity(EntityInfo entityInfo)
         {
-            if (entityInfo.Entity.GetType() == typeof(Fisherman))
+            if (entityInfo.Entity.GetType() == typeof(Competitor))
             {
-                var fisherman = (Fisherman)entityInfo.Entity;
+                var competior = (Competitor)entityInfo.Entity;
                 //if (fisherman.Zip == "22222") throw new ArgumentException("22222 is an invalid zip code");
             }
             //return CustomerLogic.OnSaveCustomer((Customer)entityInfo.Entity);
@@ -62,17 +58,17 @@ namespace CompetitionFisher.Api.BreezeControllers
         [HttpGet]
         //[EnableBreezeQuery(AllowedQueryOptions = AllowedQueryOptions.All & ~(AllowedQueryOptions.OrderBy | AllowedQueryOptions.Top | AllowedQueryOptions.Skip))]
         //[EnableBreezeQuery(MaxExpansionDepth = 1)]
-        public IQueryable<Fisherman> Customers()
+        public IQueryable<Competitor> Competitors()
         {
             //var user = ClaimsPrincipal.Current.Identity.Name;
             //// Lookup state that user is responsible for
             //var userState = "MO";
             //return _contextProvider.Context.Customers.Where(c => c.State == userState);
-            return _contextProvider.Context.Fishermen;
+            return _contextProvider.Context.Competitors;
         }
 
         [HttpGet]
-        public IQueryable<User> Users()
+        public IQueryable<ApplicationUser> Users()
         {
             return _contextProvider.Context.Users;
         }

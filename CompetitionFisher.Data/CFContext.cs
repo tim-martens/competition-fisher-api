@@ -7,9 +7,9 @@ namespace CompetitionFisher.Data
 {
     public class CfContext : DbContext
     {
-        public DbSet<User> Users { get; set; }
+        public DbSet<ApplicationUser> Users { get; set; }
         public DbSet<Competition> Competitions { get; set; }
-        public DbSet<Fisherman> Fishermen { get; set; }
+        public DbSet<Competitor> Competitors { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -19,9 +19,9 @@ namespace CompetitionFisher.Data
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             
             // entity configurations
-            modelBuilder.Configurations.Add(new UserConfiguration());
+            modelBuilder.Configurations.Add(new ApplicationUserConfiguration());
             modelBuilder.Configurations.Add(new CompetitionConfiguration());
-            modelBuilder.Configurations.Add(new FishermanConfiguration());
+            modelBuilder.Configurations.Add(new CompetitorConfiguration());
             modelBuilder.Configurations.Add(new ChampionshipConfiguration());
         }
 
