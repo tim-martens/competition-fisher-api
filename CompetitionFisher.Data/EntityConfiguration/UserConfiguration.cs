@@ -38,7 +38,6 @@ namespace CompetitionFisher.Data.EntityConfiguration
               });
             
         }
-
-        public object Entityconfigurationconstants { get; private set; }
+        
     }
 }
