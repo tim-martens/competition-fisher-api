@@ -1,4 +1,5 @@
 ﻿using CompetitionFisher.Data;
+using System.Linq;
 
 namespace temp
 {
@@ -8,7 +9,9 @@ namespace temp
         {
             using (var db = new CfContext())
             {
-                
+                var users = db.Users.ToList();
+                var champ = db.Championships.ToList();
+                var temp = champ;
             }
         }
     }

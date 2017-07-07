@@ -11,5 +11,7 @@ namespace CompetitionFisher.Data.Entities
         public DateTime Date { get; set; }
         public virtual Championship Championship { get; set; }
         public virtual ICollection<User> Users { get; set; }
+        public virtual ICollection<ApplicationUser> Admins { get; set; }
+        public virtual ICollection<Result> Results { get; set; }
     }
 }

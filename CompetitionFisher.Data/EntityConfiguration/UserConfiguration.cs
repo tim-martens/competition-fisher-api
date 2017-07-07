@@ -32,7 +32,12 @@ namespace CompetitionFisher.Data.EntityConfiguration
                 .WithRequired(el => el.User); // see https://www.codeproject.com/Articles/806344/One-to-zero-one-relation-in-entity-framework-code
 
             //Competitions
-            //Configured in CompetitionConfiguration.
+            //configured on other side of relation
+
+            //Results
+            HasMany(el => el.Results)
+                .WithRequired(r => r.User)
+                .HasForeignKey(r => r.UserId);
 
         }
     }

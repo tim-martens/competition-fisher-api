@@ -11,6 +11,7 @@ namespace CompetitionFisher.Data
         public DbSet<Competition> Competitions { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public DbSet<Result> Results { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -25,6 +26,7 @@ namespace CompetitionFisher.Data
             modelBuilder.Configurations.Add(new CompetitionConfiguration());
             modelBuilder.Configurations.Add(new UserConfiguration());
             modelBuilder.Configurations.Add(new ApplicationUserConfiguration());
+            modelBuilder.Configurations.Add(new ResultConfiguration());
         }
 
     }

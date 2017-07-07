@@ -50,19 +50,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Result.cs" />
     <Compile Include="EntityConfiguration\Code\EntityConfigurationConstants.cs" />
     <Compile Include="Entities\Championship.cs" />
     <Compile Include="EntityConfiguration\ChampionshipConfiguration.cs" />
     <Compile Include="EntityConfiguration\CompetitionConfiguration.cs" />
     <Compile Include="EntityConfiguration\Code\Extensions\TypeConfigurationExtensions.cs" />
+    <Compile Include="EntityConfiguration\ResultConfiguration.cs" />
     <Compile Include="EntityConfiguration\UserConfiguration.cs" />
     <Compile Include="EntityConfiguration\ApplicationUserConfiguration.cs" />
     <Compile Include="Entities\Competition.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Entities\ApplicationUser.cs" />
-    <Compile Include="Migrations\201707070921185_initial.cs" />
-    <Compile Include="Migrations\201707070921185_initial.Designer.cs">
-      <DependentUpon>201707070921185_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201707071128510_initial.cs" />
+    <Compile Include="Migrations\201707071128510_initial.Designer.cs">
+      <DependentUpon>201707071128510_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,8 +75,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201707070921185_initial.resx">
-      <DependentUpon>201707070921185_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201707071128510_initial.resx">
+      <DependentUpon>201707071128510_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

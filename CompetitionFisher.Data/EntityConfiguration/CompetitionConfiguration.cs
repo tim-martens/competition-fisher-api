@@ -28,15 +28,26 @@ namespace CompetitionFisher.Data.EntityConfiguration
                 .WithMany(c => c.Competitions)
                 .Map(uc =>
                 {
-                    uc.ToTable("UsersCompetitions");
+                    uc.ToTable("UserCompetition");
                     uc.MapRightKey("UserId");
                     uc.MapLeftKey("CompetitionId");
                 });
 
-            //Championship
-            //HasOptional(el => el.Championship)
-            //    .WithMany(c => c.Competitions)
-            //    .HasForeignKey(c => c.ChampionshipId);
+            //Admins
+            HasMany(el => el.Admins)
+                .WithMany(a => a.CompetitionsWhereAdmin)
+                .Map(ac =>
+                {
+                    ac.ToTable("CompetitionAdmin");
+                    ac.MapLeftKey("CompetitionId");
+                    ac.MapRightKey("UserId");
+
+                });
+
+            //Results
+            HasMany(el => el.Results)
+                .WithRequired(r => r.Competition)
+                .HasForeignKey(r => r.CompetitionId);
 
         }
     }

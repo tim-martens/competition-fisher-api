@@ -13,7 +13,7 @@ namespace CompetitionFisher.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201707070921185_initial"; }
+            get { return "201707071128510_initial"; }
         }
         
         string IMigrationMetadata.Source

@@ -22,6 +22,18 @@ namespace CompetitionFisher.Data.EntityConfiguration
                 .WithOptional(c => c.Championship)
                 .HasForeignKey(c => c.ChampionshipId);
 
+            //Admins
+            HasMany(el => el.Admins)
+                .WithMany(a => a.ChampionshipsWhereAdmin)
+                .Map(ac =>
+                {
+                    ac.ToTable("ChampionshipAdmin");
+                    ac.MapLeftKey("ChampionshipId");
+                    ac.MapRightKey("UserId");
+                    
+                });
+
+
         }
     }
 }

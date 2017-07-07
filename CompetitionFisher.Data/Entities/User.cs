@@ -12,6 +12,7 @@ namespace CompetitionFisher.Data.Entities
 
         public virtual ApplicationUser ApplicationUser { get; set; } // may have a Application user or not
         public virtual ICollection<Competition> Competitions { get; set; }
+        public virtual ICollection<Result> Results { get; set; }
 
     }
 }

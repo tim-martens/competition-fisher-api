@@ -19,15 +19,8 @@ namespace CompetitionFisher.Data.EntityConfiguration
             //FaceBookId
             Property(el => el.FaceBookId).IsRequired().HasMaxLength(EntityConfigurationConstants.DEFAULT_SIZE_STRING_COLUMN_MEDIUM);
 
-            ////Championships
-            //HasMany(u => u.Championships)
-            //  .WithMany(c => c.Admins)
-            //  .Map(ca =>
-            //  {
-            //      ca.ToTable("AdminsPerChampionship");
-            //      ca.MapLeftKey("ApplicationUserId");
-            //      ca.MapRightKey("ChampionshipId");
-            //  });
+            //ChampionshipsWhereAdmin configured on other side of relation
+            //CompetitionsWhereAdmin configured on other side of relation
 
         }
 
