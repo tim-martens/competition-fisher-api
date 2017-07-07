@@ -21,9 +21,9 @@ namespace CompetitionFisher.Api.BreezeControllers
         }
         private bool beforeSaveEntity(EntityInfo entityInfo)
         {
-            if (entityInfo.Entity.GetType() == typeof(Competitor))
+            if (entityInfo.Entity.GetType() == typeof(User))
             {
-                var competior = (Competitor)entityInfo.Entity;
+                var competior = (User)entityInfo.Entity;
                 //if (fisherman.Zip == "22222") throw new ArgumentException("22222 is an invalid zip code");
             }
             //return CustomerLogic.OnSaveCustomer((Customer)entityInfo.Entity);
@@ -58,25 +58,31 @@ namespace CompetitionFisher.Api.BreezeControllers
         [HttpGet]
         //[EnableBreezeQuery(AllowedQueryOptions = AllowedQueryOptions.All & ~(AllowedQueryOptions.OrderBy | AllowedQueryOptions.Top | AllowedQueryOptions.Skip))]
         //[EnableBreezeQuery(MaxExpansionDepth = 1)]
-        public IQueryable<Competitor> Competitors()
+        public IQueryable<Championship> Championships()
         {
             //var user = ClaimsPrincipal.Current.Identity.Name;
             //// Lookup state that user is responsible for
             //var userState = "MO";
             //return _contextProvider.Context.Customers.Where(c => c.State == userState);
-            return _contextProvider.Context.Competitors;
-        }
-
-        [HttpGet]
-        public IQueryable<ApplicationUser> Users()
-        {
-            return _contextProvider.Context.Users;
+            return _contextProvider.Context.Championships;
         }
 
         [HttpGet]
         public IQueryable<Competition> Competitions()
         {
             return _contextProvider.Context.Competitions;
+        }
+
+        [HttpGet]
+        public IQueryable<User> Users()
+        {
+            return _contextProvider.Context.Users;
+        }
+
+        [HttpGet]
+        public IQueryable<ApplicationUser> ApplicationUsers()
+        {
+            return _contextProvider.Context.ApplicationUsers;
         }
 
         [HttpGet]

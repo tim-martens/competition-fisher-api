@@ -15,7 +15,7 @@ namespace CompetitionFisher.Data.EntityConfiguration
             Property(el => el.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None); // Client must set the ID.
 
             //Name
-            Property(el => el.Name).IsOptional().HasMaxLength(EntityConfigurationConstants.DEFAULT_SIZE_STRING_COLUMN_MEDIUM);
+            Property(el => el.Name).IsRequired().HasMaxLength(EntityConfigurationConstants.DEFAULT_SIZE_STRING_COLUMN_MEDIUM);
 
             //Date
             Property(el => el.Date)
@@ -23,18 +23,20 @@ namespace CompetitionFisher.Data.EntityConfiguration
                 .HasColumnType("datetime2")
                 .HasPrecision(0); ;
 
-            //ChampionshipId
-            //Championship
-
-            //Fishermen
-            HasMany(f => f.Competitors)
+            //Users
+            HasMany(f => f.Users)
                 .WithMany(c => c.Competitions)
-                .Map(fc =>
+                .Map(uc =>
                 {
-                    fc.ToTable("CompetitionsPerCompetitor");
-                    fc.MapLeftKey("CompetitorId");
-                    fc.MapRightKey("CompetitionId");
+                    uc.ToTable("UsersCompetitions");
+                    uc.MapRightKey("UserId");
+                    uc.MapLeftKey("CompetitionId");
                 });
+
+            //Championship
+            //HasOptional(el => el.Championship)
+            //    .WithMany(c => c.Competitions)
+            //    .HasForeignKey(c => c.ChampionshipId);
 
         }
     }

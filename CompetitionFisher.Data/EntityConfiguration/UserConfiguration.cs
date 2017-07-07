@@ -6,9 +6,9 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace CompetitionFisher.Data.EntityConfiguration
 {
-    public class CompetitorConfiguration : EntityTypeConfiguration<Competitor>
+    public class UserConfiguration : EntityTypeConfiguration<User>
     {
-        public CompetitorConfiguration()
+        public UserConfiguration()
         {
 
             //Id
@@ -27,7 +27,13 @@ namespace CompetitionFisher.Data.EntityConfiguration
                 .HasMaxLength(EntityConfigurationConstants.DEFAULT_SIZE_STRING_COLUMN_MEDIUM)
                 .HasUniqueIndexAnnotation("UX_Competitor_FirstName_LastName", EntityConfigurationConstants.SECOND_INDEX_COLUMN);
 
+            //ApplicationUser
+            HasOptional(el => el.ApplicationUser) // mark ApplicationUser property optional for Competitor
+                .WithRequired(el => el.User); // see https://www.codeproject.com/Articles/806344/One-to-zero-one-relation-in-entity-framework-code
+
             //Competitions
+            //Configured in CompetitionConfiguration.
+
         }
     }
 }

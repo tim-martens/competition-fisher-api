@@ -15,16 +15,16 @@ namespace CompetitionFisher.Api.Controllers
         private CfContext db = new CfContext();
 
         // GET: api/Users
-        public IQueryable<ApplicationUser> GetUsers()
+        public IQueryable<User> GetUsers()
         {
             return db.Users;
         }
 
         // GET: api/Users/5
-        [ResponseType(typeof(ApplicationUser))]
+        [ResponseType(typeof(User))]
         public IHttpActionResult GetUser(Guid id)
         {
-            ApplicationUser user = db.Users.Find(id);
+            User user = db.Users.Find(id);
             if (user == null)
             {
                 return NotFound();
@@ -35,7 +35,7 @@ namespace CompetitionFisher.Api.Controllers
 
         // PUT: api/users/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutUser(Guid id, ApplicationUser user)
+        public IHttpActionResult PutUser(Guid id, User user)
         {
             if (!ModelState.IsValid)
             {
@@ -69,8 +69,8 @@ namespace CompetitionFisher.Api.Controllers
         }
 
         // POST: api/Users
-        [ResponseType(typeof(ApplicationUser))]
-        public IHttpActionResult PostUser(ApplicationUser user)
+        [ResponseType(typeof(User))]
+        public IHttpActionResult PostUser(User user)
         {
             if (!ModelState.IsValid)
             {
@@ -99,10 +99,10 @@ namespace CompetitionFisher.Api.Controllers
         }
 
         // DELETE: api/Users/5
-        [ResponseType(typeof(ApplicationUser))]
+        [ResponseType(typeof(User))]
         public IHttpActionResult DeleteUser(Guid id)
         {
-            ApplicationUser user = db.Users.Find(id);
+            User user = db.Users.Find(id);
             if (user == null)
             {
                 return NotFound();

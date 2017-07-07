@@ -17,18 +17,11 @@ namespace CompetitionFisher.Data.EntityConfiguration
             //Name
             Property(el => el.Name).IsRequired().HasMaxLength(EntityConfigurationConstants.DEFAULT_SIZE_STRING_COLUMN_MEDIUM);
 
-            //Admins
-            HasMany(c => c.Admins)
-               .WithMany(a => a.Championships)
-               .Map(ca =>
-               {
-                   ca.ToTable("AdminsPerChampionship");
-                   ca.MapLeftKey("ApplicationUserId");
-                   ca.MapRightKey("ChampionshipId");
-               });
-
             //Competitions
-            
+            HasMany(el => el.Competitions)
+                .WithOptional(c => c.Championship)
+                .HasForeignKey(c => c.ChampionshipId);
+
         }
     }
 }

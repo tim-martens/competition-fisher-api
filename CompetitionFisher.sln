@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompetitionFisher.Data", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompetitionFisher.Api", "CompetitionFisher.Api\CompetitionFisher.Api.csproj", "{80D1888A-AD1B-4E47-BF11-A4C9192E22D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "temp", "temp\temp.csproj", "{635AAC18-B557-47D4-92CA-0E253B71FD50}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{80D1888A-AD1B-4E47-BF11-A4C9192E22D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80D1888A-AD1B-4E47-BF11-A4C9192E22D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80D1888A-AD1B-4E47-BF11-A4C9192E22D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{635AAC18-B557-47D4-92CA-0E253B71FD50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{635AAC18-B557-47D4-92CA-0E253B71FD50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{635AAC18-B557-47D4-92CA-0E253B71FD50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{635AAC18-B557-47D4-92CA-0E253B71FD50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

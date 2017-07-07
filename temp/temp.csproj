@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CB17BB80-3CD6-4DA3-8CFE-B73D8793A17D}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{635AAC18-B557-47D4-92CA-0E253B71FD50}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CompetitionFisher.Data</RootNamespace>
-    <AssemblyName>CompetitionFisher.Data</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <RootNamespace>temp</RootNamespace>
+    <AssemblyName>temp</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -50,32 +52,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EntityConfiguration\Code\EntityConfigurationConstants.cs" />
-    <Compile Include="Entities\Championship.cs" />
-    <Compile Include="EntityConfiguration\ChampionshipConfiguration.cs" />
-    <Compile Include="EntityConfiguration\CompetitionConfiguration.cs" />
-    <Compile Include="EntityConfiguration\Code\Extensions\TypeConfigurationExtensions.cs" />
-    <Compile Include="EntityConfiguration\UserConfiguration.cs" />
-    <Compile Include="EntityConfiguration\ApplicationUserConfiguration.cs" />
-    <Compile Include="Entities\Competition.cs" />
-    <Compile Include="Entities\User.cs" />
-    <Compile Include="Entities\ApplicationUser.cs" />
-    <Compile Include="Migrations\201707070921185_initial.cs" />
-    <Compile Include="Migrations\201707070921185_initial.Designer.cs">
-      <DependentUpon>201707070921185_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CfContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201707070921185_initial.resx">
-      <DependentUpon>201707070921185_initial.cs</DependentUpon>
-    </EmbeddedResource>
+    <ProjectReference Include="..\CompetitionFisher.Data\CompetitionFisher.Data.csproj">
+      <Project>{cb17bb80-3cd6-4da3-8cfe-b73d8793a17d}</Project>
+      <Name>CompetitionFisher.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
