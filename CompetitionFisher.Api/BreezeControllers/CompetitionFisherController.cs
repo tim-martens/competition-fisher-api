@@ -80,6 +80,12 @@ namespace CompetitionFisher.Api.BreezeControllers
         }
 
         [HttpGet]
+        public IQueryable<Result> Results()
+        {
+            return _contextProvider.Context.Results;
+        }
+
+        [HttpGet]
         public IQueryable<ApplicationUser> ApplicationUsers()
         {
             return _contextProvider.Context.ApplicationUsers;
