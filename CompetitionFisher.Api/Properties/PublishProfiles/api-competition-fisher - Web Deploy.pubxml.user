@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 This file is used by the publish/package process of your Web project. You can customize the behavior of this process
-by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
 -->
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvyeXcP+M00i9zxgUyF30igAAAAACAAAAAAAQZgAAAAEAACAAAADCWOSjZpVlaQgB+smpY+i72yhfj2TQSmiUq5mr2k1JrAAAAAAOgAAAAAIAACAAAAC9YhVue16Xz3rCugv4LErI3zRBLc8zj8oTfjq3Rk6QboAAAABNLrxTKwCxLCzJy4SnnbhkPajbTdKnlEqQ4kHZHJ2dmVC0aQShPmiOpOiZmMpOUYhN/wi1FStEA0siHV1aIWEtVgpuL2v+ed9AceLg7gehGRQ1xY1niqiVyr9zJul26z9MZvhXd3/bmn02g58vvtnLeYVy3OzTkhZHbPu04/M34EAAAACSq5GVWoIQAlpqb2Pb4ezMNmiAkerT+8ZbFQnb5Uaiht0hL6n8ijeO9ussCoHh47ne0Sc1/dUGu4KRfC/poQVM</EncryptedPassword>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAw57rZK6GM0OIPItSD1Q85AAAAAACAAAAAAAQZgAAAAEAACAAAAC+fjtGoJ+6GF9126M691skaq/H3PSwIPCrfV8ITf+47wAAAAAOgAAAAAIAACAAAABZh56mQlH17dcTxJ2/zZSechHkN4yh4F7M7WenBwSFc4AAAABYAJSGLz7RpW5v3oYNOQoZaPEizCxZhbk4/Ob45ecVa1/F+2sTGydZM3zjc91/m+QbL8nWpwJe9oY0SggyyVFTbpmKjB7zjCr8QRcBjf3X5blg7Nae7XFiU2qngg07OLAw65/zPW4RwccEcEkynnhDD7YQ9ENdDJMmvwfT1AHbJkAAAAD3UFoY2qzMtgCLnX6bnMO/AFdc5AlIJcm7aEg0fTU+FoDuiuv7WIIpvYTgYbQbbzPzkke4HC/QsPG2Qvj179U0</EncryptedPassword>
+    <_NewBackgroundProfile>False</_NewBackgroundProfile>
   </PropertyGroup>
 </Project>
