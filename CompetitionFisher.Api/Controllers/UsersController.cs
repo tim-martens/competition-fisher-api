@@ -1,12 +1,15 @@
-﻿using CompetitionFisher.Data;
-using CompetitionFisher.Data.Entities;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using CompetitionFisher.Data;
+using CompetitionFisher.Data.Entities;
 
 namespace CompetitionFisher.Api.Controllers
 {
@@ -33,7 +36,7 @@ namespace CompetitionFisher.Api.Controllers
             return Ok(user);
         }
 
-        // PUT: api/users/5
+        // PUT: api/Users/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutUser(Guid id, User user)
         {

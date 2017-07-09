@@ -19,13 +19,18 @@ namespace CompetitionFisher.Data.EntityConfiguration
             Property(el => el.FirstName)
                 .IsRequired()
                 .HasMaxLength(EntityConfigurationConstants.DEFAULT_SIZE_STRING_COLUMN_MEDIUM)
-                .HasUniqueIndexAnnotation("UX_Competitor_FirstName_LastName", EntityConfigurationConstants.FIRST_INDEX_COLUMN);
+                .HasUniqueIndexAnnotation("UX_User_FirstName_LastName", EntityConfigurationConstants.FIRST_INDEX_COLUMN);
 
             //LastName
             Property(el => el.LastName)
                 .IsRequired()
                 .HasMaxLength(EntityConfigurationConstants.DEFAULT_SIZE_STRING_COLUMN_MEDIUM)
-                .HasUniqueIndexAnnotation("UX_Competitor_FirstName_LastName", EntityConfigurationConstants.SECOND_INDEX_COLUMN);
+                .HasUniqueIndexAnnotation("UX_User_FirstName_LastName", EntityConfigurationConstants.SECOND_INDEX_COLUMN);
+
+            //Email
+            Property(el => el.Email)
+                .HasMaxLength(EntityConfigurationConstants.DEFAULT_SIZE_STRING_COLUMN_MEDIUM);
+                
 
             //ApplicationUser
             HasOptional(el => el.ApplicationUser) // mark ApplicationUser property optional for Competitor

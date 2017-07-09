@@ -9,6 +9,7 @@ namespace CompetitionFisher.Data.Entities
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string Email { get; set; }
 
         public virtual ApplicationUser ApplicationUser { get; set; } // may have a Application user or not
         public virtual ICollection<Competition> Competitions { get; set; }

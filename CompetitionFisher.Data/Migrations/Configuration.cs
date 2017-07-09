@@ -45,13 +45,13 @@ namespace CompetitionFisher.Data.Migrations
             // Users & ApplicationUsers
             context.Users.AddOrUpdate(
                 el => new { el.FirstName, el.LastName },
-                new User { Id = userId1, FirstName = "Tim", LastName = "Martens", ApplicationUser = new ApplicationUser { Id = userId1, FaceBookId = "SomeId1" } },
-                new User { Id = userId2, FirstName = "Eddy", LastName = "Pauwels", ApplicationUser = new ApplicationUser { Id = userId2, FaceBookId = "SomeId2" } },
-                new User { Id = userId3, FirstName = "Peter", LastName = "Martens" },
-                new User { Id = userId4, FirstName = "Johan", LastName = "Van Ginderen" },
-                new User { Id = userId5, FirstName = "Werner", LastName = "Janssens" },
-                new User { Id = userId6, FirstName = "Quinten", LastName = "Van Ginderen" },
-                new User { Id = userId7, FirstName = "Patrick", LastName = "Vanotterdyck" }
+                new User { Id = userId1, FirstName = "Tim", LastName = "Martens", Email="tim.martens2@gmail.com", ApplicationUser = new ApplicationUser { Id = userId1, FaceBookId = "SomeId1" } },
+                new User { Id = userId2, FirstName = "Eddy", LastName = "Pauwels", Email = "tim.martens2@gmail.com", ApplicationUser = new ApplicationUser { Id = userId2, FaceBookId = "SomeId2" } },
+                new User { Id = userId3, FirstName = "Peter", LastName = "Martens", Email = "tim.martens2@gmail.com" },
+                new User { Id = userId4, FirstName = "Johan", LastName = "Van Ginderen", Email = "tim.martens2@gmail.com" },
+                new User { Id = userId5, FirstName = "Werner", LastName = "Janssens", Email = "tim.martens2@gmail.com" },
+                new User { Id = userId6, FirstName = "Quinten", LastName = "Van Ginderen", Email = "tim.martens2@gmail.com" },
+                new User { Id = userId7, FirstName = "Patrick", LastName = "Vanotterdyck", Email = "tim.martens2@gmail.com" }
                 );
 
             var user1 = context.Users.Find(userId1);
